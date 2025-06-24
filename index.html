@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+  <meta name="viewport" content="width=device-width user-scalable=no"/>
+  <link rel=stylesheet href=style.css>
+  <style>
+    body {
+      background-color: #f2f2f2; /* Warna latar belakang */
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      width: 100%; /* Lebar container */
+      height: 100%; /* Tinggi container */
+      background-color: #34C759; /* Warna hijau */
+      position: absolute; /* Posisi absolut */
+      top: 50%; /* Jarak dari atas */
+      left: 50%; /* Jarak dari kiri */
+      transform: translate(-50%, -50%); /* Menggeser container ke tengah */
+      text-align: center; /* Teks di tengah */
+      padding: 20px; /* Jarak antara teks dan border */
+      border-radius: 10px; /* Sudut melengkung */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Bayangan */
+      z-index: 2;
+    }
+    
+    .salah {
+      background-color: #FF0000; /* Warna merah */
+    }
+    #utama {
+      position: absolute;
+      width: 500px;
+      height: 450px;
+      background-color: lightblue;
+      z-index: 2;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <h1 id="pertanyaan">Pertanyaan 1</h1>
+    <p id="soal"></p>
+    <input type="text" id="jawaban"/>
+    <button id="kirim" onclick="cekJawaban()">Kirim</button>
+    <p id="hasil"></p>
+    <p id="skor">Skor: 3</p>
+  </div>
+  <div id="utama" class="utama">
+    <h1>Judul Halaman</h1>
+    <p>Teks halaman</p>
+  </div>
+
+  <script>
+    let skor = 3;
+    let pertanyaan = [
+      {
+        soal: "Apa nama ibukota Indonesia?",
+        jawaban: "jakarta"
+      },
+      {
+        soal: "\"Bersatu kita teguh bercerai kita... \"",
+        jawaban: "runtuh"
+      },
+      {
+        soal: "Apa nama planet terbesar di tata surya kita? (Jupiter/Pluto)",
+        jawaban: "jupiter"
+      },
+      {
+        soal: "Apa bahasa inggrisnya pisang?",
+        jawaban: "banana"
+      },
+      {
+        soal: "Bagus! sekarang, anda manusia atau robot?",
+        jawaban: "manusia"
+      }
+    ];
+    let index = 0;
+    
+    document.getElementById("soal").innerHTML = pertanyaan[index].soal;
+    
+    function cekJawaban() {
+      let jawaban = document.getElementById("jawaban").value;
+      if (jawaban.toLowerCase() === pertanyaan[index].jawaban) {
+        skor++;
+        document.getElementById("hasil").innerHTML = "Jawaban benar!";
+        document.getElementById("skor").innerHTML = "Skor: " + skor;
+        index++;
+        if (index < pertanyaan.length) {
+          document.getElementById("soal").innerHTML = pertanyaan[index].soal;
+          document.getElementById("jawaban").value = "";
+        } else {
+          document.getElementById("container").style.display = "none";
+          document.getElementById("utama").style.display = "block";
+          alert("Anda berhasil menjawab semua pertanyaan!, selamat :)");
+        }
+      } else {
+        skor--;
+        document.getElementById("container").classList.add("salah");
+        setTimeout(function() {
+          document.getElementById("container").classList.remove("salah");
+        }, 1000);
+        document.getElementById("hasil").innerHTML = "Jawaban salah!";
+        document.getElementById("skor").innerHTML = "Skor: " + skor;
+        document.getElementById("jawaban").value = "";
+        if (skor <= 0) {
+          document.getElementById("hasil").innerHTML = "Game Over! Skor Anda 0. Anda akan keluar dari web dalam 5 detik.";
+          document.getElementById("jawaban").disabled = true;
+          document.getElementById("container").style.background = "#FF0000";
+          setTimeout(function() {
+            window.open("https://geda-gedi-gedao-v1.tiiny.site/", "_parent");
+          }, 3000);
+        }
+      }
+    }
+    
+  </script>
+</body>
+</html>
