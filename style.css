@@ -1,0 +1,62 @@
+body {
+ background-color: deepskyblue;
+ background-image: url("Bintang.jpg");
+}
+
+ #pertanyaan {
+ font-size: 55px;
+}
+#soal {
+ font-size: 45px;
+}
+#skor {
+ font-size: 35px;
+}
+#jawaban {
+ width: 103%;
+ height: 7%;
+ background-color: white;
+ border-radius: 10px;
+}
+#kirim {
+ width: 75px;
+ height: 50px;
+ background-color: lime;
+ color: black;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Boldonse&family=Darumadrop+One&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Sevillana&display=swap");
+
+ #utama {
+      position: absolute;
+      width: 400px;
+      height: 450px;
+      background-color: lightblue;
+      z-index: 2;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      display: none;
+      background-image: url("Lembah.jpg");
+      background-size: 100%  100%;
+      background-repeat: no-repeat;
+    }
+    #judul-utama {
+      color: #503CEE;
+      text-shadow: 10px 10px 5px rgba(255,255,255,0.9);
+      font-family: 'Sevillana';
+    }
+  
+      #teks-utama {
+      color: black;
+      font-family: 'Darumadrop One';
+     }
+     #teksKedua {
+      color: black;
+      letter-spacing: 1px;
+     }
+     
+#kirim {
+ border-radius: 30%;
+}     
