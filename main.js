@@ -26,7 +26,6 @@ let skor = 3;
     function cekJawaban() {
       let jawaban = document.getElementById("jawaban").value;
       if (jawaban.toLowerCase().trim() === pertanyaan[index].jawaban) {
-        document.getElementById("jawaban").placeholder = pertanyaan[index + 1].place;
         skor++;
         document.getElementById("hasil").innerHTML = "Jawaban benar!";
         setTimeout(() => {
@@ -46,18 +45,16 @@ let skor = 3;
         if (index < pertanyaan.length) {
           document.getElementById("soal").innerHTML = pertanyaan[index].soal;
           document.getElementById("jawaban").value = "";
+          document.getElementById("jawaban").placeholder = pertanyaan[index].place;
         } else {
           document.getElementById("container").style.display = "none";
           document.getElementById("utama").style.display = "block";
-          alert("Anda berhasil menjawab semua pertanyaan!, selamat :)");
-          setTimeout(() => { 
-  let musik = document.createElement("audio"); 
-  musik.src = "GaramDanMadu.m4a"; 
-  musik.play(); 
-}, 1000);
+          alert("Selamat anda berhasil menjawab semua pertanyaan yang telah diberikan :)");
+  let musik = document.getElementById("lagu");
+  musik.play();
 
 let teksKedua = document.getElementById("teksKedua"); 
-let startCount = 30; 
+let startCount = 17; 
 let endCount = 0; 
 let perulangan = setInterval(() => { 
   startCount--; 
@@ -70,7 +67,7 @@ let perulangan = setInterval(() => {
 
 setTimeout(() => { 
   window.open("https://example.com", "_self"); 
-}, 33000);
+}, 7000);
         }
       } else {
         document.getElementById("jawaban").placeholder = pertanyaan[index].place;
@@ -91,12 +88,12 @@ setTimeout(() => {
         if (skor <= 0) {
           document.getElementById("hasil").innerHTML = "Game Over! Skor Anda 0. Anda akan keluar dari web dalam 5 detik.";
           document.getElementById("jawaban").disabled = true;
-          let tombol = document.getElementById("kirim").disabled = true;
+          document.getElementById("kirim").disabled = true;
           document.getElementById("container").style.background = "#FF0000";
           setTimeout(function() {
-            window.open("https://geda-gedi-gedao-v1.tiiny.site/", "_parent");
-          }, 3000);
+            window.open("https://geda-gedi-gedao-v1.tiiny.site","_self");
+          }, 3000)
         }
       }
     }
- 
+  
