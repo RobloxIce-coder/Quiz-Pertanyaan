@@ -66,7 +66,7 @@ let perulangan = setInterval(() => {
 }, 1000);
 
 setTimeout(() => { 
-  window.open("https://example.com", "_self"); 
+  window.open("https://tempat-para-anomali.vercel.app/", "_self"); 
 }, 7000);
         }
       } else {
@@ -91,9 +91,9 @@ setTimeout(() => {
           document.getElementById("kirim").disabled = true;
           document.getElementById("container").style.background = "#FF0000";
           setTimeout(function() {
-            window.open("https://geda-gedi-gedao-v1.tiiny.site","_self");
+            window.open("https://robloxice-coder.github.io/mydemowebsite1/","_self");
           }, 3000)
         }
       }
     }
-  
+ 
