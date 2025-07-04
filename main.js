@@ -1,4 +1,4 @@
-let skor = 3;
+let skor = 0;
     let pertanyaan =[{ soal: "Apa nama ibukota Indonesia?", jawaban: "jakarta", place: "Jakarta/Bandung/Semarang" },
   { soal: "\"Bersatu kita teguh bercerai kita... \"", jawaban: "runtuh", place: "Runtuh/Berpisah/Berkumpul" },
   { soal: "Manusia bernafas memerlukan?", jawaban: "oksigen", place: "Hidrogen/Oksigen/Nitrogen" },
