@@ -67,7 +67,7 @@ let perulangan = setInterval(() => {
 
 setTimeout(() => { 
   window.open("https://tempat-para-anomali.vercel.app/", "_self"); 
-}, 7000);
+}, 18000);
         }
       } else {
         document.getElementById("jawaban").placeholder = pertanyaan[index].place;
